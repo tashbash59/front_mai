@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои заявки</title>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/my_req.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+    <div class="header-content">
+        <div class="header-left">
+            <img src="../img/mai icon.svg" alt="Логотип" class="logo">
+            <div class="nav-links">
+                <a href="main.html" class="nav-link">Конференции</a>
+                <a href="#" class="nav-link active">Мои заявки</a>
+            </div>
+        </div>
+        <div class="header-icons">
+            <img src="../img/uved.svg" alt="Иконка 2" class="header-icon">
+            <img src="../img/avatar.svg" alt="Иконка 1" class="header-icon">
+        </div>
+    </div>
+</header>
+    
+    <!-- Основное содержимое -->
+    <div class="container">
+        <h1 class="page-title">Мои заявки</h1>
+        
+        <!-- Фильтры и поиск -->
+        <div class="filters-row">
+            <div class="filters">
+                <div class="filter">Статус</div>
+                <div class="filter">Дата проведения</div>
+            </div>
+            <input type="text" class="search" placeholder="Поиск...">
+        </div>
+        
+        <!-- Карточки конференций -->
+        <div class="conference-card">
+            <div class="status-bar">
+                <div class="card-header">
+                    <div class="status approved">
+                        <div class="status-dot active"></div>
+                        <span>Заявка одобрена</span>
+                    </div>
+                    <div class="deadline date">15-18 апреля 2025</div>
+                </div>
+                <div class="deadline">
+                    <span>до: 30.01.2025</span>
+                </div>
+            </div>
+            <div class="card-content">
+                <img src="../img/mai.svg" alt="Конференция" class="conference-image">
+                <div class="conference-info">
+                    <h3 class="conference-title">Следы додумай</h3>
+                    <p class="conference-description">Международная конференция для молодых ученых и исследователей</p>
+                </div>
+                <button class="apply-btn">Посмотреть заявку</button>
+            </div>
+        </div>
+        
+        <div class="conference-card">
+            <div class="status-bar">
+                <div class="card-header">
+                    <div class="status draft" >
+                        <span>Черновик</span>
+                    </div>
+                    <div class="status soon">
+                        <div class="status-dot pending"></div>
+                        <span>Скоро дедлайн</span>
+                    </div>
+                    <div class="deadline date">15-18 апреля 2025</div>
+                </div>
+                <div class="deadline">
+                    <span>до: 30.01.2025</span>
+                </div>
+            </div>
+            <div class="card-content">
+                <img src="../img/mai.svg" alt="Конференция" class="conference-image">
+                <div class="conference-info">
+                    <h3 class="conference-title">Следы додумай</h3>
+                    <p class="conference-description">Международная конференция для молодых ученых и исследователей</p>
+                </div>
+                <button class="apply-btn">Посмотреть заявку</button>
+            </div>
+        </div>
+
+        <div class="conference-card">
+            <div class="status-bar">
+                <div class="card-header">
+                    <div class="status consideration">
+                        <div class="status-dot consideration"></div>
+                        <span>Заявка на рассмотрении</span>
+                    </div>
+                    <div class="deadline date">15-18 апреля 2025</div>
+                </div>
+                <div class="deadline">
+                    <span>до: 30.01.2025</span>
+                </div>
+            </div>
+            <div class="card-content">
+                <img src="../img/mai.svg" alt="Конференция" class="conference-image">
+                <div class="conference-info">
+                    <h3 class="conference-title">Следы додумай</h3>
+                    <p class="conference-description">Международная конференция для молодых ученых и исследователей</p>
+                </div>
+                <button class="apply-btn">Посмотреть заявку</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

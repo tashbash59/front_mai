@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body class="register-page">
+    <div class="register-container">
+        <form action="register_done.html">
+        <h1 class="register-title">Регистрация</h1>
+        
+        <div class="register-card">
+            <h2 class="section-title">Создание профиля</h2>
+            <div class="form-row">
+                <div class="register-input-group">
+                    <input type="text" placeholder="Логин" required>
+                </div>
+                <div class="register-input-group">
+                    <input type="password" placeholder="Пароль" required>
+                </div>
+                <div class="register-input-group">
+                    <input type="password" placeholder="Повтор пароля" required>
+                </div>
+            </div>
+        </div>
+        
+        <div class="register-card">
+            <h2 class="section-title">Личные данные</h2>
+            <div class="form-grid">
+                <div class="register-input-group">
+                    <input type="text" placeholder="Фамилия" required>
+                </div>
+                <div class="register-input-group">
+                    <input type="text" placeholder="Имя" required>
+                </div>
+                <div class="register-input-group">
+                    <input type="text" placeholder="Отчество">
+                </div>
+                <div class="register-input-group">
+                    <input type="date" id="birthdate" required>
+                </div>
+                <div class="register-input-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="register-input-group">
+                    <input type="tel" placeholder="Телефон">
+                </div>
+            </div>
+        </div>
+        
+        <div class="register-card">
+            <h2 class="section-title">Дополнительно</h2>
+            <div class="form-row">
+                <div class="register-input-group">
+                    <select required>
+                        <option value="" disabled selected>Страна</option>
+                        <option value="ru">Россия</option>
+                        <option value="kz">Казахстан</option>
+                        <option value="by">Беларусь</option>
+                    </select>
+                </div>
+                <div class="register-input-group">
+                    <input type="text" placeholder="Город">
+                </div>
+                <div class="register-input-group">
+                    <select>
+                        <option value="" disabled selected>Статус</option>
+                        <option value="student">Студент</option>
+                        <option value="teacher">Преподаватель</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <button class="register-btn">Зарегистрироваться</button>
+        </form>
+    </div>
+</body>
+<script>
+    // Устанавливаем кастомный плейсхолдер для поля даты
+    const dateInput = document.querySelector('input[type="date"]');
+    
+    // Функция для установки плейсхолдера
+    function setDatePlaceholder() {
+        if (!dateInput.value) {
+            dateInput.classList.add('empty');
+        } else {
+            dateInput.classList.remove('empty');
+        }
+    }
+    
+    // Инициализация при загрузке
+    document.addEventListener('DOMContentLoaded', setDatePlaceholder);
+    
+    // Обработчик изменений
+    dateInput.addEventListener('change', setDatePlaceholder);
+</script>
+</html>

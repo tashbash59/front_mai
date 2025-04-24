@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подача заявки</title>
+    <link rel="stylesheet" type="text/css" href="../css/aplication.css">
+        
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Подача заявки</h1>
+        <form action="main.html">
+        <!-- Карточка "Тема выступления" -->
+        <div class="card">
+            <h2 class="card-title">Тема выступления</h2>
+            
+            <div class="form-group">
+                <select id="direction">
+                    <option value="" disabled selected>направление</option>
+                    <option value="1">Направление 1</option>
+                    <option value="2">Направление 2</option>
+                    <option value="3">Направление 3</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" id="topic" placeholder="Тема">
+            </div>
+            
+            <div class="form-group">
+                <input type="text" id="topic-eng" placeholder="Тема работы на английском языке">
+            </div>
+        </div>
+        
+        <!-- Карточка "Информация о работе" -->
+        <div class="card">
+            <h2 class="card-title">Информация о работе</h2>
+            
+            <div class="form-group">
+                <input type="text" id="keywords" placeholder="Ключевые слова">
+            </div>
+            
+            <div class="form-group">
+                <input type="text" id="keywords-eng" placeholder="Ключевые слова на английском языке">
+            </div>
+            
+            <div class="form-group">
+                <textarea id="abstract" placeholder="Аннотация"></textarea>
+                <div class="hint">Введите 5-7 предложений</div>
+            </div>
+            
+            <div class="form-group">
+                <textarea id="abstract-eng" placeholder="Аннотация на английском языке"></textarea>
+                <div class="hint">Введите 5-7 предложений</div>
+            </div>
+        </div>
+        
+        <!-- Карточка "Содержание работы" -->
+        <div class="card">
+            <h2 class="card-title">Содержание работы</h2>
+            
+            <div class="form-group">
+                <textarea id="work-content" placeholder="Тезисы"></textarea>
+                <div class="hint">Введите от 1500 до 5000 символов</div>
+                <div class="hint">Текст тезисов не подразумевает наличие формул, таблиц и рисунков</div>
+            </div>
+            
+            <div class="form-group">
+                <textarea id="literature" placeholder="Список литературы"></textarea>
+                <div class="hint">Укажите список литературы при его наличии</div><div class="hint">Используйте не более 4 источников</div>
+            </div>
+        </div>
+        
+        <!-- Карточка "Информация о научном руководителе" -->
+        <div class="card">
+            <h2 class="card-title">Информация о научном руководителе</h2>
+            
+            <div class="form-group">
+                <input type="text" id="supervisor-name" placeholder="ФИО">
+            </div>
+            
+            <div class="row">
+                <div class="form-group">
+                    <select id="degree">
+                        <option value="" disabled selected>Выберите степень</option>
+                        <option value="phd">Кандидат наук</option>
+                        <option value="doctor">Доктор наук</option>
+                        <option value="none">Нет степени</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <select id="title">
+                        <option value="" disabled selected>Выберите звание</option>
+                        <option value="professor">Профессор</option>
+                        <option value="associate">Доцент</option>
+                        <option value="none">Нет звания</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Карточка "Соавторы" -->
+        <div class="card authors">
+            <h2 class="card-title">Соавторы</h2>
+            
+            <div class="add-author">
+                <img src="../img/stepen.svg">
+                <span>Добавить соавтора в публикацию</span>
+            </div>
+        </div>
+        
+        <!-- Карточка "Экспертное заключение" -->
+        <div class="card">
+            <h2 class="card-title">Экспертное заключение</h2>
+            
+            <p>Скачайте файл, заполните его и загрузите, если вы представляете МАИ. Если вы из другой организации — используйте форму, утверждённую у вас. Если в вашей организации нет экспертной комиссии и формы заключения, напишите в Оргкомитет конференции: gagarin.mai@yandex.ru.</p>
+            <div class="checkbox-item">
+                <img src="../img/file.svg" class="file-icon">
+                <label for="personal-data">Экспертное заключение</label>
+            </div>
+            <div class="file-upload">
+                <p class="select-file"><strong>Выберите файлы </strong></p>
+                <p><strong>или перетяните их сюда</strong></p>
+                <input type="file" id="expert-opinion" style="display: none;">
+            </div>
+            <div class="hint">Загрузите в формате PDF</div>
+            
+        </div>
+        
+        <!-- Карточка "Согласие на обработку персональных данных" -->
+        <div class="card">
+            <h2 class="card-title">Согласие на обработку персональных данных</h2>
+            
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <img src="../img/file.svg" class="file-icon">
+                    <label for="personal-data">Соответствие обработке персональных данных</label>
+                </div>
+
+            </div>
+            
+            <div class="file-upload">
+                <p class="select-file"><strong>Выберите файлы </strong></p>
+                <p><strong>или пересчеты в слова</strong></p>
+                <input type="file" id="personal-data-file" style="display: none;">
+            </div>
+            <div class="hint">Загрузите в формате PDF, JPG или JPEG</div>
+            
+
+        </div>
+        
+        <!-- Карточка "Примечание" -->
+        <div class="card">
+            <h2 class="card-title">Примечание</h2>
+            <p>При необходимости введите любые примечания для руководителя секции</p>
+            <div class="form-group">
+                <textarea id="notes" placeholder="При необходимости вводите любые примечания для руководства соцзам"></textarea>
+            </div>
+            
+        </div>
+        
+        <!-- Карточка с вопросами -->
+        <div class="card questions">
+            <div class="form-group">
+                <span class="qustion">Интересует ли вас поступление в магистратуру МАИ?</span>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="magistracy-yes" name="magistracy" value="yes">
+                        <label for="magistracy-yes">Да</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="magistracy-no" name="magistracy" value="no">
+                        <label for="magistracy-no">Нет</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <span class="qustion">Интересует ли вас участие в акселерационной программе Стартап-студии МАИ?</span>
+                <div class="radio-group">
+                    <div class="radio-option">
+                        <input type="radio" id="startup-yes" name="startup" value="yes">
+                        <label for="startup-yes">Да</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="startup-no" name="startup" value="no">
+                        <label for="startup-no">Нет</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Кнопки отправки и сохранения -->
+        <div class="submit-section">
+            <button class="submit-btn">Отправить заявку</button>
+            <a href="#" class="save-draft">Сохранить в черновиках</a>
+        </div>
+        </form>
+    </div>
+</body>
+</html>
