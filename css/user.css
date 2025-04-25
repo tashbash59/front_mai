@@ -1,0 +1,118 @@
+.user-photo {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 50px;
+}
+
+.user-photo p {
+	font-weight: 100 !important;
+	margin: 0px;
+	color: rgba(27, 31, 59, 0.65);
+}
+
+.file-upload {
+	display: flex;
+	flex-direction: column;
+	margin-left: 50px;
+	height: 60px;
+	width: 240px;
+}
+:root {
+            --primary-color: rgba(4, 128, 183, 1);
+            --primary-hover: rgba(3, 110, 158, 1);
+            --border-color: #ddd;
+            --text-color: #333;
+            --hint-color: #666;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: var(--text-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .page-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: var(--text-color);
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            flex: 1;
+            position: relative;
+        }
+        
+        .input-wrapper {
+            position: relative;
+            height: 40px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding-top: 18px;
+            background: white;
+        }
+        
+        .form-hint {
+            position: absolute;
+            top: 6px;
+            left: 15px;
+            font-size: 12px;
+            color: var(--hint-color);
+            pointer-events: none;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 8px 15px 0 15px;
+            border: none !important;
+            font-size: 16px;
+            box-sizing: border-box;
+            background: transparent;
+            height: 38px;
+            outline: none;
+        }
+        
+        .input-wrapper:focus-within {
+            border-color: var(--primary-color);
+        }
+        
+        .input-wrapper:focus-within .form-hint {
+            color: var(--primary-color);
+        }
+        
+        .full-width {
+            width: 100%;
+        }
+#stepen {
+	border: 1px solid #ddd !important;
+	height: 58px !important;
+}

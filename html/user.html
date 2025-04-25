@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/aplication.css">
+    <link rel="stylesheet" type="text/css" href="../css/user.css">
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+    <div class="header-content">
+        <div class="header-left">
+            <img src="../img/mai icon.svg" alt="Логотип" class="logo">
+            <div class="nav-links">
+                <a href="#" class="nav-link active">Конференции</a>
+                <a href="my_requests.html" class="nav-link">Мои заявки</a>
+            </div>
+        </div>
+        <div class="header-icons">
+            <img src="../img/uved.svg" alt="Иконка 2" class="header-icon">
+            <img src="../img/avatar.svg" alt="Иконка 1" class="header-icon">
+        </div>
+    </div>
+</header>
+    
+    <!-- Основное содержимое -->
+    <div class="container">
+        <h1 class="page-title">Профиль</h1>
+        
+        <div class="user-photo">
+            <img src="../img/tui-markericon.svg"> 
+            <div class="file-upload">
+                <p class="select-file"><strong>Выберите файлы </strong></p>
+                <p>или пересчеты в слова</p>
+                <input type="file" id="personal-data-file" style="display: none;">
+            </div>
+        </div>
+        <div class="card">
+            <h2 class="card-title">Личные данные</h2>
+            
+            <!-- Первая строка (3 поля) -->
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <span class="form-hint">Фамилия</span>
+                        <input type="text" value="Петров">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <span class="form-hint">Имя</span>
+                        <input type="text" value="Иван">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <span class="form-hint">Отчество</span>
+                        <input type="text" value="Иванович">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вторая строка (2 поля) -->
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <span class="form-hint">Дата рождения</span>
+                        <input type="date" value="11 07 2001">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <span class="form-hint">Телефон</span>
+                        <input type="text" value="+7 (962) 345-55-90">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Третья строка (2 поля) -->
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <span class="form-hint">Страна</span>
+                        <input type="text" value="Россия">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <span class="form-hint">Город</span>
+                        <input type="text" value="Москва">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Карточка "Образование" -->
+        <div class="card">
+            <h2 class="card-title">Образование</h2>
+            
+            <!-- Первая строка (3 поля) -->
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <span class="form-hint">Организация</span>
+                        <input type="text" value="МАИ">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <span class="form-hint">Институт</span>
+                        <input type="text" value="№3 - Информатика и вычислительная техника">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <span class="form-hint">Кафедра</span>
+                        <input type="text" value="316 - Системное моделирование и авт.">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Вторая строка (3 поля) -->
+            <div class="form-row">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <span class="form-hint">Ученая степень</span>
+                        <select>
+                            <option>Без степени</option>
+                            <option>Кандидат наук</option>
+                            <option>Доктор наук</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <span class="form-hint">Ученое звание</span>
+                        <select>
+                            <option>Нет</option>
+                            <option>Доцент</option>
+                            <option>Профессор</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <span class="form-hint">Специальность по БАК</span>
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Третья строка (1 поле на всю ширину) -->
+            <div class="form-row">
+                    <input id="stepen" placeholder="Должность" type="text">
+            </div>
+        </div>
+        <div class="submit-section">
+            <button class="submit-btn">Сохранить</button>
+        </div>
+    </div>
+</body>
+</html>
