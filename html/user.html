@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/aplication.css">
     <link rel="stylesheet" type="text/css" href="../css/user.css">
+    <script src="../js/placeholders.js"></script>
 </head>
 <body>
     <!-- Шапка -->
@@ -125,8 +126,7 @@
             <!-- Вторая строка (3 поля) -->
             <div class="form-row">
                 <div class="form-group">
-                    <div class="input-wrapper">
-                        <span class="form-hint">Ученая степень</span>
+                    <div class="input-wrapper selectable">
                         <select>
                             <option>Без степени</option>
                             <option>Кандидат наук</option>
@@ -135,8 +135,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="input-wrapper">
-                        <span class="form-hint">Ученое звание</span>
+                    <div class="input-wrapper selectable">
                         <select>
                             <option>Нет</option>
                             <option>Доцент</option>
@@ -147,14 +146,19 @@
                 <div class="form-group">
                     <div class="input-wrapper">
                         <span class="form-hint">Специальность по БАК</span>
-                        <input type="text">
+                        <input type="text" placeholder="Специальность по БАК">
                     </div>
                 </div>
             </div>
             
             <!-- Третья строка (1 поле на всю ширину) -->
             <div class="form-row">
-                    <input id="stepen" placeholder="Должность" type="text">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <span class="form-hint">Должность</span>
+                        <input placeholder="Должность" type="text">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="submit-section">

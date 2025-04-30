@@ -17,6 +17,19 @@
 	height: 60px;
 	width: 240px;
 }
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    /* Добавляем кастомную стрелочку */
+    background-image: url("../img/Icon.svg");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+    height: 56px;
+}
 :root {
             --primary-color: rgba(4, 128, 183, 1);
             --primary-hover: rgba(3, 110, 158, 1);
@@ -75,9 +88,10 @@
         .input-wrapper {
             position: relative;
             height: 40px;
+            padding: 12px 0px 3px; 
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding-top: 18px;
+            padding-top: 0 18px;
             background: white;
         }
         
@@ -88,19 +102,49 @@
             font-size: 12px;
             color: var(--hint-color);
             pointer-events: none;
+            opacity: 0;
+            transition: all 0.2s ease;
         }
         
-        input, select {
+        input {
             width: 100%;
-            padding: 8px 15px 0 15px;
+            height: 100%;
+            padding: 0;
             border: none !important;
             font-size: 16px;
             box-sizing: border-box;
             background: transparent;
             height: 38px;
             outline: none;
+            position: relative;
+            z-index: 1;
         }
-        
+        .input-wrapper::after {
+            content: attr(data-placeholder);
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            right: 15px;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 16px;
+            text-align: center;
+            pointer-events: none;
+            transition: all 0.2s ease;
+            z-index: 0;
+          }
+        /* Скрываем псевдоэлемент при наличии значения или фокусе */
+          .input-wrapper.has-value::after,
+          .input-wrapper:focus-within::after {
+            opacity: 0;
+          }
+
+          /* Показываем подсказку при наличии значения или фокусе */
+          .input-wrapper.has-value .form-hint,
+          .input-wrapper:focus-within .form-hint {
+            opacity: 1;
+          }
+                
         .input-wrapper:focus-within {
             border-color: var(--primary-color);
         }
@@ -112,7 +156,34 @@
         .full-width {
             width: 100%;
         }
+        input::placeholder {
+          color: var(--hint-color);
+          font-size: 16px;
+          position: relative;
+          margin-bottom: 20px;
+        }
 #stepen {
 	border: 1px solid #ddd !important;
 	height: 58px !important;
+}
+
+.form-group:focus-within {
+    border-color: var(--primary-color);
+}
+
+#direction {
+    height: 56px;
+}
+.selectable {
+    width: 100%;
+            height: 120%;
+            padding: 0;
+            border: none !important;
+            font-size: 16px;
+            box-sizing: border-box;
+            background: transparent;
+            height: 56px !important;
+            outline: none;
+            position: relative;
+            z-index: 1;
 }

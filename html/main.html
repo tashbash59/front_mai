@@ -33,8 +33,13 @@
         <!-- Фильтры и поиск -->
         <div class="filters-row">
             <div class="filters">
-                <div class="filter">Статус</div>
-                <div class="filter">Дата проведения</div>
+                    <select class="status">
+                        <option>Статус</option>
+                        <option>Активная</option>
+                        <option>Скоро дедлайн</option>
+                        <option>Заявка на рассмотрении</option>
+                    </select>
+                <input type="date" class="input-date">
             </div>
             <input type="text" class="search" placeholder="Поиск...">
         </div>
@@ -49,8 +54,9 @@
                     </div>
                     <div class="deadline date">15-18 апреля 2025</div>
                 </div>
-                <div class="deadline">
-                    <span>до: 30.01.2025</span>
+                <div class="deadline-container">
+                    <div class="deadline-label">Подача заявок до</div>
+                    <div class="deadline-date">30.04.2024</div>
                 </div>
             </div>
             <form action="application.html">
@@ -74,8 +80,9 @@
                     </div>
                     <div class="deadline date">15-18 апреля 2025</div>
                 </div>
-                <div class="deadline">
-                    <span>до: 30.01.2025</span>
+                <div class="deadline-container">
+                    <div class="deadline-label">Подача заявок до</div>
+                    <div class="deadline-date">30.04.2024</div>
                 </div>
             </div>
             <div class="card-content">
@@ -97,8 +104,9 @@
                     </div>
                     <div class="deadline date">15-18 апреля 2025</div>
                 </div>
-                <div class="deadline">
-                    <span>до: 30.01.2025</span>
+                <div class="deadline-container">
+                    <div class="deadline-label">Подача заявок до</div>
+                    <div class="deadline-date">30.04.2024</div>
                 </div>
             </div>
             <div class="card-content">

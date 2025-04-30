@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Подача заявки</title>
     <link rel="stylesheet" type="text/css" href="../css/aplication.css">
-        
+    <link rel="stylesheet" type="text/css" href="../css/user.css">    
 </head>
 <body>
     <div class="container">
@@ -16,20 +16,26 @@
             <h2 class="card-title">Тема выступления</h2>
             
             <div class="form-group">
-                <select id="direction">
-                    <option value="" disabled selected>направление</option>
-                    <option value="1">Направление 1</option>
-                    <option value="2">Направление 2</option>
-                    <option value="3">Направление 3</option>
-                </select>
+                    <select id="direction" class="select">
+                        <option value="" disabled selected>направление</option>
+                        <option value="1">Направление 1</option>
+                        <option value="2">Направление 2</option>
+                        <option value="3">Направление 3</option>
+                    </select>
             </div>
             
             <div class="form-group">
-                <input type="text" id="topic" placeholder="Тема">
+                <div class="input-wrapper">
+                    <span class="form-hint">Тема</span>
+                    <input type="text" id="topic" placeholder="Тема">
+                </div>
             </div>
             
             <div class="form-group">
-                <input type="text" id="topic-eng" placeholder="Тема работы на английском языке">
+                <div class="input-wrapper">
+                    <span class="form-hint">Тема работы на английском языке</span>
+                    <input type="text" id="topic-eng" placeholder="Тема работы на английском языке">
+                </div>
             </div>
         </div>
         
@@ -38,11 +44,17 @@
             <h2 class="card-title">Информация о работе</h2>
             
             <div class="form-group">
-                <input type="text" id="keywords" placeholder="Ключевые слова">
+                <div class="input-wrapper">
+                    <span class="form-hint">Ключевые слова</span>
+                    <input type="text" id="keywords" placeholder="Ключевые слова">
+                </div>
             </div>
             
             <div class="form-group">
-                <input type="text" id="keywords-eng" placeholder="Ключевые слова на английском языке">
+                <div class="input-wrapper">
+                    <span class="form-hint">Ключевые слова на английском языке</span>
+                    <input type="text" id="keywords-eng" placeholder="Ключевые слова на английском языке">
+                </div>
             </div>
             
             <div class="form-group">
@@ -77,13 +89,16 @@
             <h2 class="card-title">Информация о научном руководителе</h2>
             
             <div class="form-group">
-                <input type="text" id="supervisor-name" placeholder="ФИО">
+                <div class="input-wrapper">
+                    <span class="form-hint">ФИО</span>
+                    <input type="text" id="supervisor-name" placeholder="ФИО">
+                </div>
             </div>
             
             <div class="row">
                 <div class="form-group">
-                    <select id="degree">
-                        <option value="" disabled selected>Выберите степень</option>
+                        <select id="direction">
+                        <option value="1" disabled selected class="placeholder">Выберите степень</option>
                         <option value="phd">Кандидат наук</option>
                         <option value="doctor">Доктор наук</option>
                         <option value="none">Нет степени</option>
@@ -91,7 +106,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <select id="title">
+                        <select id="direction">
                         <option value="" disabled selected>Выберите звание</option>
                         <option value="professor">Профессор</option>
                         <option value="associate">Доцент</option>
@@ -120,7 +135,7 @@
                 <img src="../img/file.svg" class="file-icon">
                 <label for="personal-data">Экспертное заключение</label>
             </div>
-            <div class="file-upload">
+            <div class="file-upload-one">
                 <p class="select-file"><strong>Выберите файлы </strong></p>
                 <p><strong>или перетяните их сюда</strong></p>
                 <input type="file" id="expert-opinion" style="display: none;">
@@ -141,7 +156,7 @@
 
             </div>
             
-            <div class="file-upload">
+            <div class="file-upload-one">
                 <p class="select-file"><strong>Выберите файлы </strong></p>
                 <p><strong>или пересчеты в слова</strong></p>
                 <input type="file" id="personal-data-file" style="display: none;">
@@ -165,7 +180,7 @@
         <div class="card questions">
             <div class="form-group">
                 <span class="qustion">Интересует ли вас поступление в магистратуру МАИ?</span>
-                <div class="radio-group">
+                <div class="radio-group-one">
                     <div class="radio-option">
                         <input type="radio" id="magistracy-yes" name="magistracy" value="yes">
                         <label for="magistracy-yes">Да</label>
@@ -179,7 +194,7 @@
             
             <div class="form-group">
                 <span class="qustion">Интересует ли вас участие в акселерационной программе Стартап-студии МАИ?</span>
-                <div class="radio-group">
+                <div class="radio-group-one">
                     <div class="radio-option">
                         <input type="radio" id="startup-yes" name="startup" value="yes">
                         <label for="startup-yes">Да</label>
@@ -200,4 +215,63 @@
         </form>
     </div>
 </body>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+  // Функция для обновления состояния подсказки и плейсхолдера
+  function updateFieldState(field, isBlurEvent = false) {
+    const wrapper = field.closest('.input-wrapper');
+    if (!wrapper) return;
+    
+    const hint = wrapper.querySelector('.form-hint');
+    if (!hint) return;
+    
+    const placeholderText = field.getAttribute('data-placeholder') || field.getAttribute('placeholder');
+    
+    // Сохраняем оригинальный плейсхолдер в data-атрибут
+    if (!field.hasAttribute('data-placeholder') && placeholderText) {
+      field.setAttribute('data-placeholder', placeholderText);
+    }
+    
+    const hasValue = field.value && field.value.trim() !== '';
+    const isSelectWithValue = field.tagName === 'SELECT' && field.selectedIndex > 0;
+    const isFocused = field === document.activeElement;
+    
+    if (hasValue || isSelectWithValue || isFocused) {
+      // Показываем подсказку, скрываем плейсхолдер
+      hint.style.opacity = '1';
+      field.removeAttribute('placeholder');
+    } else {
+      // Показываем плейсхолдер, скрываем подсказку
+      hint.style.opacity = '0';
+      if (field.hasAttribute('data-placeholder')) {
+        field.setAttribute('placeholder', field.getAttribute('data-placeholder'));
+      }
+    }
+  }
+
+  // Инициализация всех полей на странице
+  function initFields() {
+    const inputs = document.querySelectorAll('.input-wrapper input, .input-wrapper select');
+    
+    inputs.forEach(input => {
+      // Сохраняем оригинальный плейсхолдер
+      if (input.getAttribute('placeholder') && !input.hasAttribute('data-placeholder')) {
+        input.setAttribute('data-placeholder', input.getAttribute('placeholder'));
+      }
+      
+      updateFieldState(input);
+      
+      input.addEventListener('input', () => updateFieldState(input));
+      input.addEventListener('focus', () => updateFieldState(input));
+      input.addEventListener('blur', () => updateFieldState(input, true));
+      
+      if (input.tagName === 'SELECT') {
+        input.addEventListener('change', () => updateFieldState(input));
+      }
+    });
+  }
+
+  initFields();
+});
+</script>
 </html>
